@@ -1,0 +1,135 @@
+{
+  "patient_details": [
+    {
+      "title": "Mr",
+      "name": "qweqwe",
+      "gender": "Male",
+      "dob": "2021-02-13",
+      "age": 9,
+      "appointment_date": "2021-02-13",
+      "phone": "7206919941",
+      "street_addr1": "158 Inverness Dr W Apt C206",
+      "street_addr2": "Capstone at vallagio",
+      "city": "Englewood",
+      "state": "CO",
+      "zip": "80112",
+      "country": "United States",
+      "id": 1
+    },
+    {
+      "title": "Ms",
+      "name": "priya",
+      "gender": "Female",
+      "dob": "2021-02-13",
+      "age": 10,
+      "appointment_date": "2021-02-20",
+      "phone": "7206919941",
+      "street_addr1": "158 Inverness Dr W Apt C206",
+      "street_addr2": "Capstone at vallagio",
+      "city": "Englewood",
+      "state": "CO",
+      "zip": "80112",
+      "country": "United States",
+      "id": 2
+    },
+    {
+      "title": "Mr",
+      "name": "test",
+      "gender": "Male",
+      "dob": "2006-01-02",
+      "age": 15,
+      "appointment_date": "2021-02-15",
+      "phone": "720-691-9941",
+      "street_addr1": "158 Inverness Dr W Apt C206",
+      "street_addr2": "Capstone at vallagio",
+      "city": "Englewood",
+      "state": "CO",
+      "zip": "80112",
+      "country": "United States",
+      "id": 3
+    }
+  ],
+  "patient_tests": [
+    {
+      "patient_detailId": 1,
+      "total_amount": 2777,
+      "balance_due": 2777,
+      "paid_amount": 0,
+      "billing_status": "Not yet Billed",
+      "tests": [
+        {
+          "scan_name": "MRI BRAIN",
+          "scan_amount": 3000,
+          "discount": "223",
+          "total_amount": 2777
+        }
+      ],
+      "transaction": [],
+      "id": 1
+    },
+    {
+      "patient_detailId": 3,
+      "total_amount": 0,
+      "balance_due": 0,
+      "paid_amount": 0,
+      "billing_status": "Not yet Billed",
+      "tests": [],
+      "id": 2
+    }
+  ],
+  "modalityslots": [
+    {
+      "id": 1,
+      "modality": "CT",
+      "slot_count": 7
+    },
+    {
+      "id": 2,
+      "modality": "MRI",
+      "slot_count": 6
+    },
+    {
+      "id": 1,
+      "modality": "LAB",
+      "slot_count": -1
+    }
+  ],
+  "medical_billing_master": [
+    {
+      "medical_billing": "CT BRAIN",
+      "amount": 2000,
+      "max_discount": "100",
+      "modality": "CT"
+    },
+    {
+      "medical_billing": "CT PNS",
+      "amount": 1000,
+      "max_discount": "200",
+      "modality": "CT"
+    },
+    {
+      "medical_billing": "MRI BRAIN",
+      "amount": 3000,
+      "max_discount": "300",
+      "modality": "MRI"
+    },
+    {
+      "medical_billing": "MRI PNS",
+      "amount": 2400,
+      "max_discount": "30%",
+      "modality": "MRI"
+    },
+    {
+      "medical_billing": "GLUCOSE FASTING",
+      "amount": 130,
+      "max_discount": "10%",
+      "modality": "LAB"
+    },
+    {
+      "medical_billing": "SUGAR TESTING",
+      "amount": 300,
+      "max_discount": "5%",
+      "modality": "LAB"
+    }
+  ]
+}

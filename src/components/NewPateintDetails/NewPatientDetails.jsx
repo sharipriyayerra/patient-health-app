@@ -3,6 +3,7 @@ import { Button } from '@material-ui/core';
 import AutoCompleteSearch from './AutoCompleteSearch';
 import BillingList from './BillingList';
 import HealthServices from '../../services/HealthServices';
+import './Patient.scss';
 
 class NewPatientDetails extends React.Component {
   constructor(props) {
@@ -20,9 +21,23 @@ class NewPatientDetails extends React.Component {
       selScanopt: {},
       billingList: [],
       error: false,
-      errorMsg: ''
+      errorMsg: '',
+      successMsg: ''
     };
     this.fetchScanList();
+  }
+
+  resetState = () => {
+    this.setState({
+      patient: {
+        title: 'Mr',
+        gender: 'Male',
+        age: ''
+      },
+      scanList: [],
+      selScanopt: {},
+      billingList: []
+    })
   }
 
   fetchScanList = () => {
@@ -162,7 +177,7 @@ class NewPatientDetails extends React.Component {
       this.HealthServices.addPatientDetails(patientDetails, (result) => {
         console.log("result", result);
         const patientId = result.id;
-        const total_amt = 0;
+        let total_amt = 0;
         this.state.billingList.forEach((item) => {
           total_amt += item.total_amount;
         });
@@ -178,7 +193,8 @@ class NewPatientDetails extends React.Component {
         this.setErrorMsg(false, '');
         this.setState({
           successMsg: 'Patient Details added Successfully'
-        })
+        });
+        this.resetState();
       });
     } else {
       this.setErrorMsg(true, 'Please add atleast one test in Billing');
@@ -235,6 +251,7 @@ class NewPatientDetails extends React.Component {
             <div className="subFirstCol">
               <select
                 value={this.state.patient.title}
+                className="gender-title"
                 onChange={(event) => this.genderChange(event, 'title')}
               >
                 {
@@ -311,13 +328,16 @@ class NewPatientDetails extends React.Component {
             <label>Appointment Date</label>
           </div>
           <div className="secondColumn">
-            <input
-              type="date"
-              ref={(patientAppDate) => {
-                this.patientAppDate = patientAppDate;
-              }}
-              min={new Date().toISOString().split("T")[0]}
-              required />
+            <div className="subFirstCol">
+              <input
+                type="date"
+                ref={(patientAppDate) => {
+                  this.patientAppDate = patientAppDate;
+                }}
+                min={new Date().toISOString().split("T")[0]}
+                required />
+            </div>
+            <div className="subSecondCol">
             <label>Phone No</label>
             <input
               ref={(phoneNo) => {
@@ -328,6 +348,7 @@ class NewPatientDetails extends React.Component {
               placeholder="xxx-xxx-xxxx"
               required
             />
+            </div>
           </div>
         </div>
         <div className="patientRow">

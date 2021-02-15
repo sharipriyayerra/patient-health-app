@@ -8,7 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
+import Payments from './Payments'
 import HealthServices from '../../services/HealthServices';
+import './Billing.scss';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -28,29 +30,37 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-// const styles = makeStyles({
-//   table: {
-//     minWidth: 700,
-//   },
-// });
-
 export default class PatientBillingTransactions extends React.Component {
   constructor(props) {
     super(props);
-    // this.classes = styles();
     this.HealthServices = new HealthServices();
     this.state = {
-      rows: []
+      rows: [],
+      paymentPage: false,
+      paymentData: []
     };
     this.fetchPatientDetails('');
   }
 
   fetchPatientDetails = (sort) => {
-    // this.HealthServices.fetchPatientDetails((sort, result) => {
     this.HealthServices.fetchPatientDetails(sort, (result) => {
       this.setState({
-        rows: result
+        rows: result,
+        paymentPage: false,
+        paymentData: []
       });
+    });
+  }
+
+  fetchPatientDetaildById = (id) => {
+    this.HealthServices.fetchPatientDetaildById(id, (result) => {
+      this.showPaymentDetails(result);
+    });
+  }
+
+  addPaymentTransactions = (paymentTrans, patient_id) => {
+    this.HealthServices.addPaymentTransactions(paymentTrans, patient_id, (result) => {
+      this.fetchPatientDetaildById(result.patient_detailId);
     });
   }
 
@@ -67,11 +77,16 @@ export default class PatientBillingTransactions extends React.Component {
     this.fetchPatientDetails(sort);
   }
 
-  render() {
-    return (
-      <div>
-        <h4>View Appointment</h4>
-        <div className="filter">
+  showPaymentDetails = (paymentData) => {
+    this.setState({
+      paymentPage: true,
+      paymentData: paymentData
+    })
+  };
+
+  renderBilling = () => (<div>
+    <h4>View Appointment</h4>
+    <div className="filter">
           <div>
             <label>From Date</label>
             <input
@@ -130,6 +145,7 @@ export default class PatientBillingTransactions extends React.Component {
                       variant="body2"
                       onClick={() => {
                         // props.deleteBillingOption(row.scan_name, index);
+                          this.showPaymentDetails(row);
                       }}
                     >
                       Click to Pay
@@ -140,6 +156,17 @@ export default class PatientBillingTransactions extends React.Component {
             </TableBody>
           </Table>
         </TableContainer>
+  </div>);
+
+  render() {
+    let view = this.renderBilling();
+    if(this.state.paymentPage) {
+      view = (<Payments data={this.state.paymentData} addPaymentTransactions={this.addPaymentTransactions} />)
+    }
+
+    return (
+      <div>
+        {view}
       </div>
     );
   }

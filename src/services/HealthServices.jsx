@@ -34,4 +34,20 @@ export default class HealthServices {
     });
   }
 
+  fetchPatientDetaildById = (id, callback) => {
+    axios.get('http://localhost:3001/patient_details/' + id + '?_embed=patient_tests').then(res => {
+      callback(res.data);
+    }).catch(error => {
+      callback(error);
+    });
+  }
+
+  addPaymentTransactions = (payload, patient_id, callback) => {
+    axios.put('http://localhost:3001/patient_tests/'+patient_id, payload).then(res => {
+      callback(res.data);
+    }).catch(error => {
+      callback(error);
+    });
+  }
+
 }

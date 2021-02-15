@@ -17,44 +17,60 @@
       "id": 1
     },
     {
-      "title": "Ms",
-      "name": "priya",
-      "gender": "Female",
-      "dob": "2021-02-13",
-      "age": 10,
-      "appointment_date": "2021-02-20",
-      "phone": "7206919941",
-      "street_addr1": "158 Inverness Dr W Apt C206",
-      "street_addr2": "Capstone at vallagio",
+      "title": "Mr",
+      "name": "shiva",
+      "gender": "Male",
+      "dob": "1979-04-03",
+      "age": 41,
+      "appointment_date": "2021-02-15",
+      "phone": "720-691-3124",
+      "street_addr1": "158 Inverness Dr West Apt C206",
+      "street_addr2": "",
       "city": "Englewood",
       "state": "CO",
       "zip": "80112",
       "country": "United States",
-      "id": 2
+      "id": 4
     },
     {
-      "title": "Mr",
-      "name": "test",
-      "gender": "Male",
-      "dob": "2006-01-02",
-      "age": 15,
-      "appointment_date": "2021-02-15",
-      "phone": "720-691-9941",
-      "street_addr1": "158 Inverness Dr W Apt C206",
-      "street_addr2": "Capstone at vallagio",
+      "title": "Ms",
+      "name": "sahasra",
+      "gender": "Female",
+      "dob": "2011-05-16",
+      "age": 9,
+      "appointment_date": "2021-02-16",
+      "phone": "720-691-3124",
+      "street_addr1": "158 Inverness Dr West Apt C206",
+      "street_addr2": "",
       "city": "Englewood",
       "state": "CO",
       "zip": "80112",
       "country": "United States",
-      "id": 3
+      "id": 5
+    },
+    {
+      "title": "Mrs",
+      "name": "samm",
+      "gender": "Female",
+      "dob": "2018-02-14",
+      "age": 3,
+      "appointment_date": "2021-02-19",
+      "phone": "720-691-3124",
+      "street_addr1": "158 Inverness Dr West Apt C206",
+      "street_addr2": "",
+      "city": "Englewood",
+      "state": "CO",
+      "zip": "80112",
+      "country": "United States",
+      "id": 6
     }
   ],
   "patient_tests": [
     {
       "patient_detailId": 1,
       "total_amount": 2777,
-      "balance_due": 2777,
-      "paid_amount": 0,
+      "balance_due": 0,
+      "paid_amount": 2777,
       "billing_status": "Not yet Billed",
       "tests": [
         {
@@ -64,17 +80,91 @@
           "total_amount": 2777
         }
       ],
-      "transaction": [],
+      "transactions": [
+        {
+          "paymentDate": "2021-02-15",
+          "paymentMode": "cash",
+          "paidAmount": "1000",
+          "cardName": "xxx",
+          "cardNumber": ""
+        },
+        {
+          "paymentDate": "2021-02-15",
+          "paymentMode": "cash",
+          "paidAmount": "1000",
+          "cardName": "xxx",
+          "cardNumber": ""
+        },
+        {
+          "paymentDate": "2021-02-15",
+          "paymentMode": "cash",
+          "paidAmount": "777",
+          "cardName": "xxx",
+          "cardNumber": ""
+        }
+      ],
       "id": 1
     },
     {
-      "patient_detailId": 3,
-      "total_amount": 0,
-      "balance_due": 0,
+      "patient_detailId": 4,
+      "total_amount": 2590,
+      "balance_due": 2590,
       "paid_amount": 0,
       "billing_status": "Not yet Billed",
-      "tests": [],
-      "id": 2
+      "tests": [
+        {
+          "scan_name": "MRI PNS",
+          "scan_amount": 2400,
+          "discount": "100",
+          "total_amount": 2300
+        },
+        {
+          "scan_name": "SUGAR TESTING",
+          "scan_amount": 300,
+          "discount": "10",
+          "total_amount": 290
+        }
+      ],
+      "id": 2,
+      "transactions": []
+    },
+    {
+      "patient_detailId": 5,
+      "total_amount": 118,
+      "balance_due": 118,
+      "paid_amount": 0,
+      "billing_status": "Not yet Billed",
+      "tests": [
+        {
+          "scan_name": "GLUCOSE FASTING",
+          "scan_amount": 130,
+          "discount": "12",
+          "total_amount": 118
+        }
+      ],
+      "id": 3
+    },
+    {
+      "patient_detailId": 6,
+      "total_amount": 3019,
+      "balance_due": 3019,
+      "paid_amount": 0,
+      "billing_status": "Not yet Billed",
+      "tests": [
+        {
+          "scan_name": "GLUCOSE FASTING",
+          "scan_amount": 130,
+          "discount": "11",
+          "total_amount": 119
+        },
+        {
+          "scan_name": "MRI BRAIN",
+          "scan_amount": 3000,
+          "discount": "100",
+          "total_amount": 2900
+        }
+      ],
+      "id": 4
     }
   ],
   "modalityslots": [

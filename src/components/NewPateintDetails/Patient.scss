@@ -1,0 +1,87 @@
+
+.patientRow {
+    height: 35px;
+    width: 100%;
+  }
+  
+  .firstColumn {
+    column-width: 165px;
+      float: left;
+      text-align: left;
+  }
+  
+  .secondColumn {
+    /* width: 80%; */
+  }
+  
+  .addressCol {
+    padding-left: 22%;
+  }
+  
+  .fullwidth {
+    width: 75%;
+  }
+  
+  .subFirstCol {
+    column-width: 250px;
+      float: left;
+  }
+  
+  .cityCol {
+    width: 36%;
+    margin-right: 5px;
+  }
+  
+  .stateCol {
+    width: 37%;
+  }
+  
+  h4 {
+    color: #3e9aea;
+      border-bottom: 2px solid #3e9aea;
+      padding-bottom: 5px;
+  }
+  
+  .scanListAmt {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .scanListAmt .label1 {
+    margin: 0 45px 0px 20px;
+  }
+  
+  .scanListAmt .label2 {
+    margin: 0 10px;
+  }
+  
+  .scanListAmt .discount {
+    margin-right: 5px;
+    width: 150px;
+  }
+  
+  .addBtn {
+    width: 80px;
+    height: 20px;
+    background: white;
+  }
+  
+  .saveBtn {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .saveBtn input {
+    width: 100px;
+      height: 35px;
+      background: white;
+      text-align: center;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .gender-title {
+    margin-right: 5px;
+  }

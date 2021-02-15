@@ -1,0 +1,20 @@
+.filter {
+    width: 100%;
+    margin: 10px 0;
+  
+    div {
+      float: left;
+    }
+}
+
+.payments {
+  width: 100%;
+  .details{
+    float: left;
+    column-width: 300px
+  }
+
+  .transactions {
+    float: left;
+  }
+}
